@@ -1,8 +1,8 @@
 package com.asm.java.controller.API;
 
-import com.asm.java.entity.Article;
 import com.asm.java.entity.Categories;
 import com.google.gson.Gson;
+import com.googlecode.objectify.ObjectifyService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +14,9 @@ import java.util.List;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 public class ApiCategoryController extends HttpServlet {
+    static {
+        ObjectifyService.register(Categories.class);
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
