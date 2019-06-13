@@ -51,7 +51,7 @@
                 <div class="form-group ">
                     <label for="DesSelector">Description Selector</label>
                     <input type="text" class="form-control" name="desSelector" id="DesSelector"
-                           placeholder="Enter description selector" value=".description">
+                           placeholder="Enter description selector" value=".sidebar_1 .description">
                 </div>
                 <div class="form-group ">
                     <label for="ContentSelector">Content Selector</label>

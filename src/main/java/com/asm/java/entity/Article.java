@@ -22,6 +22,8 @@ public class Article {
     @Index
     private String source;
     @Index
+    private String name_category;
+    @Index
     private String url_category;
     @Index
     private String url_detail;
@@ -51,13 +53,14 @@ public class Article {
         this.status = status.getValue();
     }
 
-    public Article(String link, String title,String img, String description, String content, String source, String url_category, String url_detail) {
+    public Article(String link, String title,String img, String description, String content, String source,String name_category, String url_category, String url_detail) {
         this.link = link;
         this.title = title;
         this.img = img;
         this.description = description;
         this.content = content;
         this.source = source;
+        this.name_category = name_category;
         this.url_category = url_category;
         this.url_detail = url_detail;
 
@@ -187,5 +190,13 @@ public class Article {
 
     public void setUrl_detail(String url_detail) {
         this.url_detail = url_detail;
+    }
+
+    public String getName_category() {
+        return name_category;
+    }
+
+    public void setName_category(String name_category) {
+        this.name_category = name_category;
     }
 }

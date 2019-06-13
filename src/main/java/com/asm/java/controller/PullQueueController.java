@@ -106,7 +106,7 @@ public class PullQueueController extends HttpServlet {
             }
             Categories categories = new Categories(url_category, category);
             // lấy xong thì save lại vào database.
-            Article newArticle = new Article(link, title, img, description, content, source, url_category, url_detail);
+            Article newArticle = new Article(link, title, img, description, content, source,category, url_category, url_detail);
 
             if (title.length() < 3 || img.length() < 3 || description.length() < 3 || content.length() < 3 || source.length() < 3 || url_category.length() < 3 || url_detail.length() < 3) {
                 newArticle.setStatus(-1);
