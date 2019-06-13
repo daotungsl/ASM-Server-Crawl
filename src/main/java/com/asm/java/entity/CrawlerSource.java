@@ -1,0 +1,113 @@
+package com.asm.java.entity;
+
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
+import com.googlecode.objectify.annotation.Unindex;
+
+@Entity
+public class CrawlerSource {
+
+    @Id
+    private String url; // https://vnexpress.net/kinh-doanh
+    @Unindex
+    private String linkSelector; //  .list_news a
+    @Unindex
+    private String titleSelector;
+    @Unindex
+    private String imgSelector;
+    @Unindex
+    private String desSelector;
+    @Unindex
+    private String contentSelector;
+    @Unindex
+    private String authorSelector;
+    @Index
+    private int status;
+
+    public enum Status {
+        DEACTIVE(0), ACTIVE(1), DELETED(-1);
+
+        int value;
+
+        Status(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    public CrawlerSource() {
+    }
+
+    public CrawlerSource(String url , int status) {
+        this.url = url;
+        this.status = status;
+    }
+
+    public String getLinkSelector() {
+        return linkSelector;
+    }
+
+    public void setLinkSelector(String linkSelector) {
+        this.linkSelector = linkSelector;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getTitleSelector() {
+        return titleSelector;
+    }
+
+    public void setTitleSelector(String titleSelector) {
+        this.titleSelector = titleSelector;
+    }
+
+    public String getContentSelector() {
+        return contentSelector;
+    }
+
+    public void setContentSelector(String contentSelector) {
+        this.contentSelector = contentSelector;
+    }
+
+    public String getAuthorSelector() {
+        return authorSelector;
+    }
+
+    public void setAuthorSelector(String authorSelector) {
+        this.authorSelector = authorSelector;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getImgSelector() {
+        return imgSelector;
+    }
+
+    public void setImgSelector(String imgSelector) {
+        this.imgSelector = imgSelector;
+    }
+
+    public String getDesSelector() {
+        return desSelector;
+    }
+
+    public void setDesSelector(String desSelector) {
+        this.desSelector = desSelector;
+    }
+}

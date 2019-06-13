@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <servlet>
+        <servlet-name>PullQueueController</servlet-name>
+        <servlet-class>com.asm.java.controller.PullQueueController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PullQueueController</servlet-name>
+        <url-pattern>/admin/pull-queue</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CreateQueueController</servlet-name>
+        <servlet-class>com.asm.java.controller.CreateQueueController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateQueueController</servlet-name>
+        <url-pattern>/admin/create-queue</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CrawlerSourceController</servlet-name>
+        <servlet-class>com.asm.java.controller.CrawlerSourceController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrawlerSourceController</servlet-name>
+        <url-pattern>/admin/crawler-source</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CrawlerController</servlet-name>
+        <servlet-class>com.asm.java.cronjob.CrawlerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrawlerController</servlet-name>
+        <url-pattern>/_cron/crawler</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewSelector</servlet-name>
+        <servlet-class>com.asm.java.controller.View.ViewSelectorController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewSelector</servlet-name>
+        <url-pattern>/selector</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewSelectorPageController</servlet-name>
+        <servlet-class>com.asm.java.controller.View.ViewSelectorPageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewSelectorPageController</servlet-name>
+        <url-pattern>/selector/page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>ListTitle</servlet-name>
+    <servlet-class>com.asm.java.controller.API.ApiArticleController</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>ListTitle</servlet-name>
+        <url-pattern>/api/article</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListCategories</servlet-name>
+        <servlet-class>com.asm.java.controller.API.ApiCategoryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCategories</servlet-name>
+        <url-pattern>/api/categories</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListCategoriesArticle</servlet-name>
+        <servlet-class>com.asm.java.controller.API.ApiListArticleByCategoryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCategoriesArticle</servlet-name>
+        <url-pattern>/api/categories/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ArticleDetail</servlet-name>
+        <servlet-class>com.asm.java.controller.API.ApiDetailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ArticleDetail</servlet-name>
+        <url-pattern>/api/article/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
