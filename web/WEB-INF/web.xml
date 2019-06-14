@@ -57,9 +57,9 @@
     </servlet-mapping>
 
     <servlet>
-    <servlet-name>ListTitle</servlet-name>
-    <servlet-class>com.asm.java.controller.API.ApiArticleController</servlet-class>
-</servlet>
+        <servlet-name>ListTitle</servlet-name>
+        <servlet-class>com.asm.java.controller.API.ApiArticleController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListTitle</servlet-name>
         <url-pattern>/api/article</url-pattern>
